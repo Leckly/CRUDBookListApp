@@ -1,1 +1,6 @@
 # CRUDBookListapp
+
+REQUIREMENTS:
+
+.NET 6
+ANGULAR 14.0.2
