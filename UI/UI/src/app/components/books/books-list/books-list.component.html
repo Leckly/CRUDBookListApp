@@ -1,0 +1,34 @@
+<head>
+
+  <link href="books-list.component.scss" rel="stylesheet/scss" type="text/css">
+</head>
+
+<div class="container my-5">
+  <div id="div1">
+    <h1 class="mb-3">Books</h1>
+  </div>
+    <table class="table table-dark" *ngIf="books && books.length > 0" >
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">NumberOfPages</th>
+            <th scope="col">Price</th>
+            <th scope="col">ProductionYear</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>{{ book.name}}</td>
+            <td>{{ book.author}}</td>
+            <td>{{ book.numberOfPages}}</td>
+            <td>{{ book.price}}</td>
+            <td>{{ book.productionYear}}</td>
+            <td> <a [routerLink]="['/books', 'edit' , book.id]">View</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <p *ngIf="!books || books.length <= 0 ">No Books</p>
+</div>
